@@ -13,6 +13,20 @@
   }
 }
 
+.textbox {
+  border: 1px solid #f3f3f3;
+  height: 2rem;
+  box-sizing: border-box;
+  padding: 1px 1px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+.textbox:focus {
+  transition: 0.2s ease-in-out;
+  border: 1px solid rgb(201, 18, 48);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -32,6 +46,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

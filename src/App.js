@@ -1,25 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, { useState, useEffect } from 'react';
+// import './App.css';
+// import { AgGridReact } from 'ag-grid-react';
+// import "ag-grid-community/styles/ag-grid.css"
+// import "ag-grid-community/styles/ag-theme-balham.css"
+// import { Button, Badge, Nav, NavItem, NavLink, pills } from "reactstrap";
+// import { Link, useNavigate } from 'react-router-dom';
+// import Footer from './Components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+
+// function App() {
+
+//   const nagivate = useNavigate();
+//   return (
+//     <div className="container">
+
+
+
+
+//       <Nav pills>
+//         <NavItem>
+//           <NavLink active onClick={() => nagivate("MoviesPage")}>
+//             Home
+//           </NavLink>
+//         </NavItem>
+
+//         <NavItem>
+//           <NavLink Click={() => nagivate("MoviesPage")}>
+//             Link
+//           </NavLink>
+//         </NavItem>
+//         <NavItem>
+//           <NavLink href="#">
+//             second link
+//           </NavLink>
+//         </NavItem>
+
+//       </Nav>
+//       <Footer />
+
+//       {/* <Nav pills>
+//         <NavItem>
+//           <NavLink onClick={() => nagivate("MoviesPage")} active>
+//             Movies Pages
+//           </NavLink>
+
+//           <NavLink onClick={() => nagivate("MoviesPage")} active>
+//             Search
+//           </NavLink>
+//         </NavItem>
+//       </Nav>*/}
+//     </div>
+
+
+//     // <Breadcrumb>
+//     //   <BreadcrumbItem onClick={() => nagivate("MoviesPage")} active={currentPage === "MoviesPage"}>
+
+//     //     Home
+
+//     //   </BreadcrumbItem>
+
+//     // </Breadcrumb>
+
+
+//   )
+
+
+// }
+
+// export default App;
