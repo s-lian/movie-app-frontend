@@ -2,12 +2,16 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
     return (
-        <div>
+        <nav>
 
-            <li><Link to="/"> Home</Link></li>
-            <li> <Link to="movies" > Movies</Link></li>
-            <li><Link to="actors"> Actors </Link> </li>
-        </div>
+            <ul>
+                <li><Link to="/"> Home</Link></li>
+                <li> <Link to="movies" > Movies</Link></li>
+                <li><Link to="actors"> Actor </Link> </li>
+                <li><Link to="login"> Login </Link> </li>
+            </ul>
+
+        </nav>
     )
 
 
