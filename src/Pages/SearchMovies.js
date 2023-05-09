@@ -38,11 +38,11 @@ export default function SearchMovies() {
             .then(() => {
                 setLoading(false)
             })
-    }, [movieQuery]);
+    }, [movieQuery, year]);
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`${API_URL}/movies/search?title=${movieQuery}`);
+            const response = await fetch(`${API_URL}/movies/search?title=${movieQuery}&year=${year}`);
             const realData = await response.json();
             const result = await realData.data.map(movie => {
                 return {
@@ -74,7 +74,10 @@ export default function SearchMovies() {
 
             </div> */}
 
-            <SearchBar onSubmit={setMovieQuery}
+            <SearchBar onSubmit={(title, year) => {
+                setMovieQuery(title)
+                setYear(year)
+            }}
 
 
             />

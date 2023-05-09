@@ -25,11 +25,22 @@ export default function SearchBar(props) {
                 }}
 
             />
+            <input
+                aria-label="Search-button"
+                type="search"
+                className="inputYear"
+                placeholder="Search Year"
+                value={selectYear}
+                onChange={(e) => setSelectYear(e.target.value)}
+
+            />
+
+
             <button
                 className="Button"
                 type="button"
                 placeholder="Search"
-                onClick={() => props.onSubmit(innerSearch)}
+                onClick={() => props.onSubmit(innerSearch, selectYear)}
             > Search
 
             </button>
