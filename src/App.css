@@ -60,7 +60,16 @@ nav ul li a:hover {
 
 
 .inputSearch {
-  margin-right: 30px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.inputYear {
+
   margin-bottom: 30px;
   padding: 8px;
   font-size: 16px;
@@ -69,7 +78,7 @@ nav ul li a:hover {
 }
 
 .Button {
-  margin-left: 30px;
+  margin-left: 20px;
   background-color: #4caf50;
   color: #fff;
   padding: 8px 10px;
@@ -77,6 +86,121 @@ nav ul li a:hover {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.error-message {
+  color: red;
+}
+
+
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plot {
+  margin-top: 20px;
+}
+
+.movie-poster-section {
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.movie-specification {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.movie-table {
+  margin-top: 20px;
+}
+
+
+.movie-poster {
+  width: 200px;
+  height: auto;
+}
+
+.detail-row {
+  flex: 1;
+}
+
+.box-office {
+  margin-top: 20px;
+}
+
+.ratings-section {
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.ratings-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ratings-section ul li {
+  margin-bottom: 5px;
+}
+
+
+
+.hero {
+  min-height: 450px;
+
+  text-align: center;
+  background-image: url("http://artofthemooc.org/wiki/wp-content/uploads/2018/02/17651.jpg");
+  background-size: 60svi;
+  background-position-x: 0%;
+
+
+
+}
+
+.ag-theme-custom .ag-root {
+  background-color: #f2f2f2;
+
+}
+
+.ag-theme-custom .ag-header {
+  background-color: #90d3ee;
+
+  color: #fff;
+
+}
+
+.ag-theme-custom .ag-row {
+  background-color: #fff;
+
+}
+
+.ag-theme-custom .ag-row-even {
+  background-color: #f2f2f2;
+}
+
+.ag-theme-custom .ag-cell {
+  color: #333;
+
+}
+
+
+
+
+
+
+
+
 
 
 /* .inputSearch {

@@ -1,8 +1,10 @@
 import React from "react";
 
 
-export default function Home() {
+export default function Home(p) {
+
     return (
+
         <main>
             <Hero />
 
@@ -12,11 +14,12 @@ export default function Home() {
 
 // hero content
 const Hero = () => (
+
     <section className="hero">
         {/* content for the hero */}
         <div className="hero__content">
-            <h1 className="hero__title">Minty Yard</h1>
-            <p className="hero__subtitle">A fine dining experience</p>
+            <h1 className="hero__title">Welcome To my Movie Page</h1>
+            <p className="hero__subtitle"> I hope you find what you are looking for</p>
 
         </div>
     </section>

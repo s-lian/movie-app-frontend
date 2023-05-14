@@ -1,10 +1,11 @@
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useTransition } from "react"
 import API_URL from "../API";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-balham.css"
 import SearchBar from "../Components/SearchBar";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -18,19 +19,19 @@ export default function SearchMovies() {
     const [movieQuery, setMovieQuery] = useState("");
     const [year, setYear] = useState("");
     const [loading, setLoading] = useState(true);
-
-    // const handleMovieQuery = (e) => {
-    //     setMovieQuery(e.target.value);
-    // };
+    const navigate = useNavigate();
+    const [error, setError] = useState(null);
 
 
-    const movieColumn = [{ headerName: "Title", field: "title" },
-    { headerName: "Year", field: "year" },
-    { headerName: "IMDB rating", field: "imdbRating" },
-    { headerName: "IMDBID", field: "imdbID" },
-    { headerName: "RottenTomatoes", field: "rottenTomatoesRating" },
-    { headerName: "Metacritic", field: "metacriticRating" },
-    { headerName: "Rated", field: "classification" }
+
+    const movieColumn = [
+        { headerName: "Title", field: "title", sortable: true, filter: true },
+        { headerName: "Year", field: "year", sortable: true, filter: "agNumberColumnFilter" },
+        { headerName: "IMDB rating", field: "imdbRating", sortable: true, filter: "agNumberColumnFilter" },
+        { headerName: "IMDBID", field: "imdbID", sortable: true, filter: true },
+        { headerName: "RottenTomatoes", field: "rottenTomatoesRating", sortable: true, filter: true },
+        { headerName: "Metacritic", field: "metacriticRating", sortable: true, filter: true },
+        { headerName: "Rated", field: "classification", sortable: true, filter: true }
     ];
 
     useEffect(() => {
@@ -60,19 +61,25 @@ export default function SearchMovies() {
 
         }
         catch (error) {
-            console.error('Error fetching data: ', error);
+            setError(error);
         }
     };
 
 
     return (
-        <div className="container">
+        <div className="searchmovie-box"
+            style={
+                {
+                    background: "#ccc",
+                    backgroundSize: "cover",
+
+
+
+                }
+            }>
             <h1> Search Movie </h1>
 
-            {/* <div className="search-bar">
-                <input type="text" icon="search" placeholder="Search by title" onChange={handleMovieQuery}></input>
 
-            </div> */}
 
             <SearchBar onSubmit={(title, year) => {
                 setMovieQuery(title)
@@ -80,12 +87,22 @@ export default function SearchMovies() {
             }}
 
 
+
             />
+
             <div className="ag-theme-balham"
                 style={
                     {
-                        width: "1000px",
+                        width: "95%",
                         height: "300px",
+                        marginLeft: "3%",
+                        marginRight: "3%",
+                        marginBottom: "20px",
+                        marginTop: "20px",
+
+
+
+
 
 
                     }}>
@@ -93,14 +110,22 @@ export default function SearchMovies() {
                     columnDefs={movieColumn}
                     rowData={movies}
                     pagination={true}
-                    paginationPageSize={10}
+                    paginationPageSize={30}
+                    defaultColDef={{ resizable: "false" }}
 
-                    defaultColDef={{ resizable: true }}
+
+
+
+                    onRowClicked={(row) => {
+
+                        navigate(`/imdbid?title=${row.data.imdbID}`)
+
+                    }}
                 />
 
 
             </div>
-        </div>
+        </div >
 
     )
 

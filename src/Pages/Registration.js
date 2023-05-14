@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import API_URL from '../API.js';
+import "../App.css";
 import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+
+export default function Registration() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
@@ -16,12 +19,20 @@ export default function Login() {
         setPassword(event.target.value);
     };
 
-    const handleLogin = async (event) => {
+    const handleConfirmPasswordChange = (event) => {
+        setConfirmPassword(event.target.value);
+    };
+
+    const handleRegistration = async (event) => {
         event.preventDefault();
 
         try {
-            if (email !== '' && password !== '') {
-                const url = `${API_URL}/user/login`;
+            if (email !== '' && password !== '' && confirmPassword !== '') {
+                if (password !== confirmPassword) {
+                    throw new Error("Passwords don't match");
+                }
+
+                const url = `${API_URL}/user/register`;
 
                 const res = await fetch(url, {
                     method: 'POST',
@@ -38,18 +49,11 @@ export default function Login() {
                 }
 
                 const data = await res.json();
-                localStorage.setItem('bearer_token', data.bearerToken.token);
-                localStorage.setItem('refresh_token', data.refreshToken.token);
-                localStorage.setItem('User contact', JSON.stringify(email));
-                localStorage.setItem("Time", Math.floor(Date.now() / 1000))
+                // Perform any additional logic after successful registration
                 console.log(data);
-
-                navigate('/');
-
-
-                // Perform any additional logic after successful login
+                navigate('/login')
             } else {
-                throw new Error('Please provide both email and password');
+                throw new Error('Please provide all required fields');
             }
         } catch (error) {
             setError(error.message);
@@ -59,14 +63,15 @@ export default function Login() {
             }, 3000);
         }
 
-        // Clear the input fields after login attempt
+        // Clear the input fields after registration attempt
         setEmail('');
         setPassword('');
+        setConfirmPassword('');
     };
 
     return (
         <div>
-            <h2>Login</h2>
+            <h2>Registration</h2>
 
             <div>
                 <label>Email:</label>
@@ -76,12 +81,13 @@ export default function Login() {
                 <label>Password:</label>
                 <input type="password" value={password} onChange={handlePasswordChange} required />
             </div>
-            <button onClick={handleLogin}>Login</button>
-
+            <div>
+                <label>Confirm Password:</label>
+                <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} required />
+            </div>
+            <button onClick={handleRegistration}>Register</button>
 
             {error && <p className="error-message">{error}</p>}
         </div>
-
-
     );
 }

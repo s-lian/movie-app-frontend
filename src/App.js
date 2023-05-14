@@ -1,71 +1,41 @@
-// import React, { useState, useEffect } from 'react';
-// import './App.css';
-// import { AgGridReact } from 'ag-grid-react';
-// import "ag-grid-community/styles/ag-grid.css"
-// import "ag-grid-community/styles/ag-theme-balham.css"
-// import { Button, Badge, Nav, NavItem, NavLink, pills } from "reactstrap";
-// import { Link, useNavigate } from 'react-router-dom';
-// import Footer from './Components/Footer';
-
-
-
-// function App() {
-
-//   const nagivate = useNavigate();
-//   return (
-//     <div className="container">
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import SearchMovies from "./Pages/SearchMovies";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import IMDBID from "./Pages/IMDBID";
+import Logout from "./Pages/Logout";
+import Login from "./Pages/Login";
+import Registration from "./Pages/Registration";
+import Actor from "./Pages/Actor";
 
 
 
 
-//       <Nav pills>
-//         <NavItem>
-//           <NavLink active onClick={() => nagivate("MoviesPage")}>
-//             Home
-//           </NavLink>
-//         </NavItem>
+export default function App() {
 
-//         <NavItem>
-//           <NavLink Click={() => nagivate("MoviesPage")}>
-//             Link
-//           </NavLink>
-//         </NavItem>
-//         <NavItem>
-//           <NavLink href="#">
-//             second link
-//           </NavLink>
-//         </NavItem>
-
-//       </Nav>
-//       <Footer />
-
-//       {/* <Nav pills>
-//         <NavItem>
-//           <NavLink onClick={() => nagivate("MoviesPage")} active>
-//             Movies Pages
-//           </NavLink>
-
-//           <NavLink onClick={() => nagivate("MoviesPage")} active>
-//             Search
-//           </NavLink>
-//         </NavItem>
-//       </Nav>*/}
-//     </div>
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="Search Movies" element={< SearchMovies />} />
+                    <Route path="imdbID" element={< IMDBID />} />
+                    <Route path="logout" element={< logout />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="registration" element={<Registration />} />
+                    <Route path="actor" element={<Actor />} />
 
 
-//     // <Breadcrumb>
-//     //   <BreadcrumbItem onClick={() => nagivate("MoviesPage")} active={currentPage === "MoviesPage"}>
+                </Routes>
 
-//     //     Home
+                <Footer />
 
-//     //   </BreadcrumbItem>
+            </div>
 
-//     // </Breadcrumb>
-
-
-//   )
+        </BrowserRouter>
 
 
-// }
-
-// export default App;
+    )
+}

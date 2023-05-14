@@ -9,7 +9,7 @@ export default function SearchBar(props) {
 
     return (
 
-        <div class="container">
+        <div className="container">
 
             <input
                 aria-labelledby="search-button"
@@ -26,7 +26,7 @@ export default function SearchBar(props) {
 
             />
             <input
-                aria-label="Search-button"
+                aria-labelledby="search-button"
                 type="search"
                 className="inputYear"
                 placeholder="Search Year"
@@ -38,6 +38,7 @@ export default function SearchBar(props) {
 
             <button
                 className="Button"
+                id="Search-button"
                 type="button"
                 placeholder="Search"
                 onClick={() => props.onSubmit(innerSearch, selectYear)}
