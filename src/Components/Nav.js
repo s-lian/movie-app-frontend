@@ -11,7 +11,6 @@ export default function Nav() {
                 <li><Link to="registration"> Registration </Link> </li>
                 <li><Link to="logout"> Logout </Link> </li>
 
-
             </ul>
 
         </nav>

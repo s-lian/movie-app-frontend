@@ -7,23 +7,13 @@ import "ag-grid-community/styles/ag-theme-balham.css"
 import SearchBar from "../Components/SearchBar";
 import { useNavigate } from 'react-router-dom';
 
-
-
-
-
 export default function SearchMovies() {
-
-
-
     const [movies, setMovies] = useState([]);
     const [movieQuery, setMovieQuery] = useState("");
     const [year, setYear] = useState("");
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const [error, setError] = useState(null);
-
-
-
     const movieColumn = [
         { headerName: "Title", field: "title", sortable: true, filter: true },
         { headerName: "Year", field: "year", sortable: true, filter: "agNumberColumnFilter" },
@@ -54,7 +44,6 @@ export default function SearchMovies() {
                     rottenTomatoesRating: movie.rottenTomatoesRating,
                     metacriticRating: movie.metacriticRating,
                     classification: movie.classification
-
                 };
             });
             setMovies(result);
@@ -65,31 +54,22 @@ export default function SearchMovies() {
         }
     };
 
-
     return (
         <div className="searchmovie-box"
             style={
                 {
                     background: "#ccc",
                     backgroundSize: "cover",
-
-
-
                 }
             }>
             <h1> Search Movie </h1>
-
-
 
             <SearchBar onSubmit={(title, year) => {
                 setMovieQuery(title)
                 setYear(year)
             }}
 
-
-
             />
-
             <div className="ag-theme-balham"
                 style={
                     {
@@ -99,35 +79,19 @@ export default function SearchMovies() {
                         marginRight: "3%",
                         marginBottom: "20px",
                         marginTop: "20px",
-
-
-
-
-
-
                     }}>
                 <AgGridReact
                     columnDefs={movieColumn}
                     rowData={movies}
                     pagination={true}
                     paginationPageSize={30}
-                    defaultColDef={{ resizable: "false" }}
-
-
-
+                    defaultColDef={{ resizable: "true" }}
 
                     onRowClicked={(row) => {
-
                         navigate(`/imdbid?title=${row.data.imdbID}`)
-
                     }}
                 />
-
-
             </div>
         </div >
-
     )
-
-
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from "reactstrap";
+
 
 export default function Logout() {
     const navigate = useNavigate();
@@ -10,10 +12,17 @@ export default function Logout() {
         localStorage.removeItem('refresh_token');
         localStorage.removeItem('User contact');
         localStorage.removeItem('Time');
-        navigate('/login');
+        navigate('/')
+
     };
 
     return (
-        <button onClick={handleLogout}>Logout</button>
+        <Button
+            color="danger"
+            size="lg"
+            className="mt-3"
+            marginBottoms="8px"
+
+            onClick={handleLogout}>Logout</Button>
     );
 }

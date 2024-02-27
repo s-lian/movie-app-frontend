@@ -60,8 +60,8 @@ export default function Login() {
         }
 
         // Clear the input fields after login attempt
-        setEmail('');
-        setPassword('');
+        // setEmail('');
+        // setPassword('');
     };
 
     return (
