@@ -9,7 +9,6 @@ export default function Registration() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
-
     const navigate = useNavigate();
 
     const handleEmailChange = (event) => {
@@ -65,9 +64,9 @@ export default function Registration() {
         }
 
         // Clear the input fields after registration attempt
-        // setEmail('');
-        // setPassword('');
-        // setConfirmPassword('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
     };
 
     return (

@@ -79,7 +79,7 @@ export default function IMDBID() {
                 </div>
 
 
-                <p className="box-office">Box Office: ${movie.boxoffice}</p>
+                <p className="box-office">Box Office: {movie.boxoffice}</p>
 
                 <Table hover bordered striped className="ag-theme-custom">
                     <thead>
@@ -116,8 +116,41 @@ export default function IMDBID() {
                 </div>
 
 
-            </div>
 
+
+                {/* <img src={movie.poster} alt={movie.title} />
+
+            <Table hover bordered striped style={{ width: "70%", fontSize: "14px", margin: "0 auto", background: "#ccc" }}>
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>Role</th> <th>Name</th> <th>Characters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {movie.principals.map((principal) => (
+                        <tr key={principal.id}>
+
+
+                            <td>{principal.id}</td>
+
+                            <td>{principal.category}</td>
+                            <td>{principal.name}</td>
+                            <td>{principal.characters.join(", ")}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table> */}
+
+
+            </div>
+            {/* < Button
+                color="info"
+                size="sm"
+                className="mt-3"
+                onClick={() => navigate("/Search Movies")}
+            >
+                Back
+            </Button> */}
         </div>
 
     )

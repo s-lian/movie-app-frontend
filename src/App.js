@@ -9,6 +9,9 @@ import Login from "./Pages/Login";
 import Registration from "./Pages/Registration";
 import Actor from "./Pages/Actor";
 
+
+
+
 export default function App() {
 
     return (
@@ -19,13 +22,20 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="Search Movies" element={< SearchMovies />} />
                     <Route path="imdbID" element={< IMDBID />} />
-                    <Route path="logout" element={< Logout />} />
+                    <Route path="logout" element={< logout />} />
                     <Route path="login" element={<Login />} />
                     <Route path="registration" element={<Registration />} />
                     <Route path="actor" element={<Actor />} />
+
+
                 </Routes>
+
                 <Footer />
+
             </div>
+
         </BrowserRouter>
+
+
     )
 }

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import '../App.css'
 
+import './CSS/SearchBar.css'
 
 export default function SearchBar(props) {
     const [innerSearch, setInnerSearch] = useState("")
