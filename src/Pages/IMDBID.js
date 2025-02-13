@@ -107,7 +107,7 @@ export default function IMDBID() {
                 <div className="ratings-section left-aligned">
                     <p>Ratings:</p>
                     <ul>
-                        {movie.ratings.map((rating) => (
+                        {movie.rating.map((rating) => (
                             <li key={rating.source}>
                                 {rating.source}: {rating.value}
                             </li>

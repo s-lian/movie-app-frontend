@@ -100,9 +100,9 @@ export default function Actor() {
 
                 setActors(realData);
                 setActorInfo({
-                    name: respond.name,
-                    birthYear: respond.birthYear,
-                    deathYear: respond.deathYear,
+                    name: respond.people.name,
+                    birthYear: respond.people.birthYear,
+                    deathYear: respond.people.deathYear,
                 })
 
 
